@@ -8,8 +8,30 @@ from typing import List
 from heapq import heappush, heappop
 from math import inf
 
-def heuristic()
+class Graph:
+    def __init__(self, connections):
+        self.connections = connections
     
+    def getConnections(self, node):
+        return [c for c in self.connections if c.fromNode == node]
+
+class Node:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+    
+    def __hash__(self):
+        return hash((self.x, self.y))
+    
+def is_goal(node, goal):
+    return node == goal
+
+def heuristic(node1, node2):
+    return abs(node1.x - node2.x) + (node1.y - node2.y)
+
 """Defining function for A* Algorithm"""
 def pathfind_AStar(graph, start, goal, heuristic):
     
