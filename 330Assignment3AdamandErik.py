@@ -13,7 +13,7 @@ class Graph:
         self.connections = connections
     
     def getConnections(self, node):
-        return [c for c in self.connections if c.fromNode == node]
+        return [c for c in self.connections if c.from_node == node]
 
 class Node:
     def __init__(self, x, y):
@@ -44,7 +44,9 @@ def pathfind_AStar(graph, start, goal, heuristic):
             
         def __lt__(self, other):
             return self.estimated_total_cost < other.estimated_total_cost
-    
+
+        def __eq__(self, other):
+            return self.node == other.node
     
     """initialize the record for start node"""
     start_record = NodeRecord(start, cost_so_far=0, estimated_total_cost=heuristic.estimate(start))
@@ -83,7 +85,7 @@ def pathfind_AStar(graph, start, goal, heuristic):
                 continue
             
             if to_node_record:
-                closed_list.remove(end_node_record)
+                closed_list.remove(to_node_record)
             
             """We can use the node's old cost values to calculate its heuristic without 
             calling the possibly expensive heuristic function"""
@@ -98,17 +100,13 @@ def pathfind_AStar(graph, start, goal, heuristic):
             to_node_record.estimated_total_cost = to_node_cost + to_node_heuristic
         
         open_list.sort()
-            
     else:
-        """Goal cant be reached from the start """
-        return None 
-            
-    
-    """work back along the path, accumulating connections"""
-    path: List[Connection] = []
+        path = []
     while current.node != start:
         path.append(current.connection)
-        current = current.connection.from_node
+        current = current.connection.getFromNode()
     return list(reversed(path))
+
+
     
     
