@@ -1,3 +1,8 @@
+"""
+Class: CS 330
+Authors: Adam Johnson & Erik Overberg
+Program: Assignment 3
+"""
 from typing import List
 import numpy as np
 
