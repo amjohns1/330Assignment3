@@ -182,11 +182,10 @@ def pathfindAStar(graph, start, goal):
 
             # We can use the node’s old cost values to calculate its heuristic without calling the possibly expensive heuristic function.
             endNodeHeuristic = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar if endNodeRecord else heuristic(
-                start,
-                endNode)
+                start, endNode)
 
             # Skip if the node is open and we’ve not found a better route.
-            endNodeRecord = next((r for r in openList if r.node == endNode), None)
+            endNodeRecord = next((r for r in openList if r.node.nodeNumber == endNode), None)
             if endNodeRecord and endNodeRecord.costSoFar <= endNodeCost:
                 continue
 
@@ -214,7 +213,7 @@ def pathfindAStar(graph, start, goal):
         path = []
         while currentRecord.node != start:
             path.append(currentRecord.connection)
-            currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode)
+            currentRecord = next(r for r in closedList if r.node.nodeNumber == currentRecord.connection.fromNode)
 
         # Reverse the path, and return it.
         path = path.reverse()
@@ -255,8 +254,8 @@ def main():
                 y = float(vals[8])
                 graph.nodes.append(Node(nodeNum, status, csf, estH, estT, prevNode, x, y))
         f.close()
-    start_node = graph.nodes[1]  # Replace 1 with the index of the desired start node
-    goal_node = graph.nodes[29]  # Replace 29 with the index of the desired goal node
+    start_node = graph.nodes[0]  # Replace 0 with the index-1 of the desired start node
+    goal_node = graph.nodes[28]  # Replace 28 with the index-1 of the desired goal node
     path = pathfindAStar(graph, start_node, goal_node)
     print(path)
 
