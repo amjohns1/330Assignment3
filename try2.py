@@ -1,8 +1,3 @@
-"""
-Class: CS 330
-Authors: Adam Johnson & Erik Overberg
-Program: Assignment 3
-"""
 from typing import List
 import numpy as np
 
@@ -156,29 +151,28 @@ def pathfindAStar(graph, start, goal, ):
             self.estimatedTotalCost = estimatedTotalCost
 
     # Initialize the record for the start node.
-    
     startRecord = NodeRecord(start, None, 0, heuristic(start, goal))
 
     # Initialize the open and closed lists.
-    openList = [start]
+    openList = [startRecord]
     closedList = []
 
     # Iterate through processing each node.
     while openList:
         # Find the smallest element in the open list (using the estimatedTotalCost).
-        currentRecord = min(openList, key=lambda r: r.estimatedTotal)
+        currentRecord = min(openList, key=lambda r: r.estimatedTotalCost)
 
         # If it is the goal node, then terminate.
-        if currentRecord == goal:
+        if currentRecord.node == goal:
             break
 
         # Otherwise get its outgoing connections.
-        connections = graph.getConnections(currentRecord)
+        connections = graph.getConnections(currentRecord.node)
 
         # Loop through each connection in turn.
         for connection in connections:
             # Get the cost estimate for the end node.
-            endNode = connection.toNode()
+            endNode = connection.getToNode()
             endNodeCost = currentRecord.costSoFar + connection.cost()
 
             # If the node is closed we may have to skip, or remove it from the closed list.
@@ -202,7 +196,7 @@ def pathfindAStar(graph, start, goal, ):
                 openList.append(endNodeRecord)
 
             # We’re here if we need to update the node. Update the cost, estimate and connection.
-            endNodeRecord.cost = endNodeCost
+            endNodeRecord.costSoFar = endNodeCost
             endNodeRecord.connection = connection
             endNodeRecord.estimatedTotalCost = endNodeCost + endNodeHeuristic
 
@@ -211,14 +205,14 @@ def pathfindAStar(graph, start, goal, ):
         closedList.append(currentRecord)
 
     # We’re here if we’ve either found the goal, or if we’ve no more nodes to search, find which.
-    if currentRecord != goal:
+    if currentRecord.node != goal:
         # We’ve run out of nodes without finding the goal, so there’s no solution.
         return list()
 
     else:
         # Compile the list of connections in the path.
         path = []
-        while currentRecord != start:
+        while currentRecord.node != start:
             path.append(currentRecord.connection)
             currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode())
 
