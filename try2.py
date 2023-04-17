@@ -218,7 +218,7 @@ def pathfindAStar(graph, start, goal, ):
     else:
         # Compile the list of connections in the path.
         path = []
-        while currentRecord.node != start:
+        while currentRecord != start:
             path.append(currentRecord.connection)
             currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode())
 
