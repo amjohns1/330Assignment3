@@ -154,25 +154,25 @@ def pathfindAStar(graph, start, goal, ):
     startRecord = NodeRecord(start, None, 0, heuristic(start, goal))
 
     # Initialize the open and closed lists.
-    openList = [startRecord]
+    openList = [start]
     closedList = []
 
     # Iterate through processing each node.
     while openList:
         # Find the smallest element in the open list (using the estimatedTotalCost).
-        currentRecord = min(openList, key=lambda r: r.estimatedTotalCost)
+        currentRecord = min(openList, key=lambda r: r.estimatedTotal)
 
         # If it is the goal node, then terminate.
-        if currentRecord.node == goal:
+        if currentRecord == goal:
             break
 
         # Otherwise get its outgoing connections.
-        connections = graph.getConnections(currentRecord.node)
+        connections = graph.getConnections(currentRecord)
 
         # Loop through each connection in turn.
         for connection in connections:
             # Get the cost estimate for the end node.
-            endNode = connection.getToNode()
+            endNode = connection.toNode()
             endNodeCost = currentRecord.costSoFar + connection.cost()
 
             # If the node is closed we may have to skip, or remove it from the closed list.
@@ -205,7 +205,7 @@ def pathfindAStar(graph, start, goal, ):
         closedList.append(currentRecord)
 
     # We’re here if we’ve either found the goal, or if we’ve no more nodes to search, find which.
-    if currentRecord.node != goal:
+    if currentRecord != goal:
         # We’ve run out of nodes without finding the goal, so there’s no solution.
         return list()
 
@@ -214,7 +214,7 @@ def pathfindAStar(graph, start, goal, ):
         path = []
         while currentRecord.node != start:
             path.append(currentRecord.connection)
-            currentRecord = next(r for r in closedList if r.node == currentRecord.connection.getFromNode())
+            currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode())
 
         # Reverse the path, and return it.
         path = path.reverse()
