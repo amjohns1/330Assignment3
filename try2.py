@@ -172,8 +172,8 @@ def pathfindAStar(graph, start, goal):
         # Loop through each connection in turn.
         for connection in connections:
             # Get the cost estimate for the end node.
-            endNode = graph.nodes[connection.toNode()-1]
-            endNodeCost = currentRecord.costSoFar + connection.cost()
+            endNode = graph.nodes[connection.toNode-1]
+            endNodeCost = currentRecord.costSoFar + connection.cost
 
             # If the node is closed we may have to skip, or remove it from the closed list.
             endNodeRecord = next((r for r in closedList if r.node == endNode), None)
