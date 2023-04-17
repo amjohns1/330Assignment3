@@ -27,7 +27,7 @@ class Node:
 
     def toString(self):
         return "Node Number " + str(self.nodeNumber) + ": Positioned at X = " + str(
-            self.x) + " and Z = " + str(self.y)
+            self.x) + " and Z = " + str(self.y) + '\n'
 
     def __hash__(self):
         return hash((self.x, self.y))
@@ -42,7 +42,7 @@ class Connection:
 
     def toString(self):
         return "Connection Number " + str(self.connectionNumber) + ": Goes from Node " + str(
-            self.fromNode) + " to Node " + str(self.toNode) + " and costs " + str(self.cost)
+            self.fromNode) + " to Node " + str(self.toNode) + " with cost " + str(self.cost) + '\n'
 
 
 def is_goal(node, goal):
@@ -256,9 +256,30 @@ def main():
         f.close()
     start_node = graph.nodes[0]  # Replace 0 with the index-1 of the desired start node
     goal_node = graph.nodes[28]  # Replace 28 with the index-1 of the desired goal node
-    path = pathfindAStar(graph, start_node, goal_node)
-    print(path)
+    path1 = pathfindAStar(graph, start_node, goal_node)
+    path2 = pathfindAStar(graph, graph.nodes[0], graph.nodes[37])
+    path3 = pathfindAStar(graph, graph.nodes[10], graph.nodes[0])
+    path4 = pathfindAStar(graph, graph.nodes[32], graph.nodes[65])
+    path5 = pathfindAStar(graph, graph.nodes[57], graph.nodes[42])
+
+
     with open('output.txt', 'w') as f:
+        f.write('Nodes:\n')
+        for node in graph.nodes:
+            f.write(node.toString())
+        f.write('Connections:\n')
+        for connection in graph.connections:
+            f.write(connection.toString())
+        f.write('Path 1: ')
+        f.write(str(path1))
+        f.write('\nPath 2: ')
+        f.write(str(path2))
+        f.write('\nPath 3: ')
+        f.write(str(path3))
+        f.write('\nPath 4: ')
+        f.write(str(path4))
+        f.write('\nPath 5: ')
+        f.write(str(path5))
 
 
 if __name__ == '__main__':
