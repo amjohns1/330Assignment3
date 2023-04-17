@@ -172,7 +172,8 @@ def main():
     path = pathfindAStar(graph, start_node, goal_node)
     print(path)
     with open('output.txt', 'w') as f:
-
-
-if __name__ == '__main__':
-    main()
+        
+        
+        
+        if __name__ == '__main__':
+            main()
