@@ -212,11 +212,11 @@ def pathfindAStar(graph, start, goal):
         # Compile the list of connections in the path.
         path = []
         while currentRecord.node != start:
-            path.append(currentRecord.connection)
+            path.append(currentRecord.node.nodeNumber)
             currentRecord = next(r for r in closedList if r.node.nodeNumber == currentRecord.connection.fromNode)
-
+        path.append(start.nodeNumber)
         # Reverse the path, and return it.
-        path = path.reverse()
+        path.reverse()
         return path
 
 
@@ -258,6 +258,7 @@ def main():
     goal_node = graph.nodes[28]  # Replace 28 with the index-1 of the desired goal node
     path = pathfindAStar(graph, start_node, goal_node)
     print(path)
+    with open('output.txt', 'w') as f:
 
 
 if __name__ == '__main__':
