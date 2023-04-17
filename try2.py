@@ -11,7 +11,7 @@ class Graph:
         self.nodes = []
 
     def getConnections(self, node):
-        return [c for c in self.connections if c.fromNode == node]
+        return [c for c in self.connections if c.fromNode == node.nodeNumber]
 
 
 class Node:
@@ -141,7 +141,7 @@ def heuristic(node1, node2):
 #             current = current.connection.getFromNode()
 #         return list(reversed(path))
 
-def pathfindAStar(graph, start, goal, ):
+def pathfindAStar(graph, start, goal):
     # This structure is used to keep track of the information we need for each node.
     class NodeRecord:
         def __init__(self, node, connection, costSoFar, estimatedTotalCost):
@@ -158,7 +158,7 @@ def pathfindAStar(graph, start, goal, ):
     closedList = []
 
     # Iterate through processing each node.
-    while openList:
+    while len(openList) > 0:
         # Find the smallest element in the open list (using the estimatedTotalCost).
         currentRecord = min(openList, key=lambda r: r.estimatedTotalCost)
 
@@ -172,7 +172,7 @@ def pathfindAStar(graph, start, goal, ):
         # Loop through each connection in turn.
         for connection in connections:
             # Get the cost estimate for the end node.
-            endNode = connection.getToNode()
+            endNode = graph.nodes[connection.toNode()-1]
             endNodeCost = currentRecord.costSoFar + connection.cost()
 
             # If the node is closed we may have to skip, or remove it from the closed list.
@@ -214,7 +214,7 @@ def pathfindAStar(graph, start, goal, ):
         path = []
         while currentRecord.node != start:
             path.append(currentRecord.connection)
-            currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode())
+            currentRecord = next(r for r in closedList if r.node == currentRecord.connection.fromNode)
 
         # Reverse the path, and return it.
         path = path.reverse()
