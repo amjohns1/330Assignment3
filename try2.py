@@ -1,3 +1,8 @@
+"""
+Class: CS 330
+Authors: Adam Johnson & Erik Overberg
+Program: Assignment 3
+"""
 from typing import List
 import numpy as np
 
@@ -151,6 +156,7 @@ def pathfindAStar(graph, start, goal, ):
             self.estimatedTotalCost = estimatedTotalCost
 
     # Initialize the record for the start node.
+    
     startRecord = NodeRecord(start, None, 0, heuristic(start, goal))
 
     # Initialize the open and closed lists.
@@ -196,7 +202,7 @@ def pathfindAStar(graph, start, goal, ):
                 openList.append(endNodeRecord)
 
             # We’re here if we need to update the node. Update the cost, estimate and connection.
-            endNodeRecord.costSoFar = endNodeCost
+            endNodeRecord.cost = endNodeCost
             endNodeRecord.connection = connection
             endNodeRecord.estimatedTotalCost = endNodeCost + endNodeHeuristic
 
