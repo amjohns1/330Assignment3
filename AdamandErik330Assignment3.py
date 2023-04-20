@@ -1,8 +1,15 @@
 from typing import List
 import numpy as np
 
+"""
+Class: CS 330
+Authors: Adam Johnson & Erik Overberg
+Program: Assignment 3
+Implements A* Algorithm and outputs results to a file
+"""
 
-class Graph:
+
+class Graph: #Holds all nodes and connections
     # nodes = None
     # connections = None
 
@@ -14,7 +21,7 @@ class Graph:
         return [c for c in self.connections if c.fromNode == node.nodeNumber]
 
 
-class Node:
+class Node: #duh
     def __init__(self, number, status, costSoFar, estH, estT, previous, x, y):
         self.nodeNumber = number
         self.status = status
@@ -27,13 +34,13 @@ class Node:
 
     def toString(self):
         return "Node Number " + str(self.nodeNumber) + ": Positioned at X = " + str(
-            self.x) + " and Z = " + str(self.y)
+            self.x) + " and Z = " + str(self.y) + '\n'
 
     def __hash__(self):
         return hash((self.x, self.y))
 
 
-class Connection:
+class Connection: #also duh
     def __init__(self, number, fromNode, toNode, cost):
         self.connectionNumber = number
         self.fromNode = fromNode
@@ -42,104 +49,16 @@ class Connection:
 
     def toString(self):
         return "Connection Number " + str(self.connectionNumber) + ": Goes from Node " + str(
-            self.fromNode) + " to Node " + str(self.toNode) + " and costs " + str(self.cost)
+            self.fromNode) + " to Node " + str(self.toNode) + " with cost " + str(self.cost) + '\n'
 
 
 def is_goal(node, goal):
     return node == goal
 
 
-def heuristic(node1, node2):
+def heuristic(node1, node2): #uses manhattan distance
     return abs(node1.x - node2.x) + (node1.y - node2.y)
 
-
-
-
-# def pathfindAStar(graph, start: Node, goal: Node):
-#     # Initialize the record for the start node.
-    # class NodeRecord:
-    #     def __init__(self, node: Node, connection, costSoFar: float, estimatedTotalCost: float):
-    #         self.node = node
-    #         self.connection = connection
-    #         self.costSoFar = costSoFar
-    #         self.estimatedTotalCost = estimatedTotalCost
-#     startRecord = NodeRecord(start, None, 0, heuristic(start, goal))
-#
-#     # Initialize the open and closed lists.
-#     open = [startRecord]
-#     closed = []
-#
-#     # Iterate through processing each node.
-#     while len(open) > 0:
-#         # Find the smallest element in the open list (using the estimatedTotalCost).
-#         current = min(open, key=lambda x: x.estimatedTotalCost)
-#
-#         # If it is the goal node, then terminate.
-#         if current.node == goal:
-#             break
-#
-#         # Otherwise get its outgoing connections.
-#         connections = graph.getConnections(current.node)
-#
-#         # Loop through each connection in turn.
-#         for connection in connections:
-#             # Get the cost estimate for the end node.
-#             endNode = connection.getToNode()
-#             endNodeCost = current.costSoFar + connection.getCost()
-#
-#             # If the node is closed we may have to skip, or remove it from the closed list.
-#             if endNode in [record.node for record in closed]:
-#                 # Here we find the record in the closed list corresponding to the endNode.
-#                 endNodeRecord = next((record for record in closed if record.node == endNode), None)
-#
-#                 # If we didn't find a shorter route, skip.
-#                 if endNodeRecord.costSoFar <= endNodeCost:
-#                     continue
-#
-#                 # Otherwise remove it from the closed list.
-#                 closed.remove(endNodeRecord)
-#
-#                 # We can use the node's old cost values to calculate its heuristic without calling the possibly
-#                 # expensive heuristic function.
-#                 endNodeHeuristic = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar
-#
-#             # Skip if the node is open and we've not found a better route.
-#             elif endNode in [record.node for record in open]:
-#                 # Here we find the record in the open list corresponding to the endNode.
-#                 endNodeRecord = next((record for record in open if record.node == endNode), None)
-#
-#                 # If our route is no better, then skip.
-#                 if endNodeRecord.costSoFar <= endNodeCost:
-#                     continue
-#
-#                 # Again, we can calculate its heuristic.
-#                 endNodeHeuristic = endNodeRecord.estimatedTotalCost - endNodeRecord.costSoFar
-#
-#             # Otherwise we know we've got an unvisited node, so make a record for it.
-#             else:
-#                 endNodeRecord = NodeRecord(endNode, None, -1, -1)
-#
-#                 # We'll need to calculate the heuristic value using the function, since we don't have an existing record to use.
-#                 endNodeHeuristic = heuristic(start, endNode)
-#
-#             # We're here if we need to update the node. Update the cost, estimate and connection.
-#             endNodeRecord.costSoFar = endNodeCost
-#             endNodeRecord.connection = connection
-#             endNodeRecord.estimatedTotalCost = endNodeCost + endNodeHeuristic
-#
-#             # And add it to the open list.
-#             if endNode not in [record.node for record in open]:
-#                 open.append(endNodeRecord)
-#         open.remove(current)
-#         closed.append(current)
-#         if current.node != goal:
-#             return list()
-#         else:
-#             path = []
-#         while current.node != start:
-#             path.append(current.connection)
-#             current = current.connection.getFromNode()
-#         return list(reversed(path))
 
 def pathfindAStar(graph, start, goal):
     # This structure is used to keep track of the information we need for each node.
@@ -172,7 +91,7 @@ def pathfindAStar(graph, start, goal):
         # Loop through each connection in turn.
         for connection in connections:
             # Get the cost estimate for the end node.
-            endNode = graph.nodes[connection.toNode-1]
+            endNode = graph.nodes[connection.toNode - 1]
             endNodeCost = currentRecord.costSoFar + connection.cost
 
             # If the node is closed we may have to skip, or remove it from the closed list.
@@ -212,11 +131,11 @@ def pathfindAStar(graph, start, goal):
         # Compile the list of connections in the path.
         path = []
         while currentRecord.node != start:
-            path.append(currentRecord.connection)
+            path.append(currentRecord.node.nodeNumber)
             currentRecord = next(r for r in closedList if r.node.nodeNumber == currentRecord.connection.fromNode)
-
+        path.append(start.nodeNumber)
         # Reverse the path, and return it.
-        path = path.reverse()
+        path.reverse()
         return path
 
 
@@ -256,8 +175,29 @@ def main():
         f.close()
     start_node = graph.nodes[0]  # Replace 0 with the index-1 of the desired start node
     goal_node = graph.nodes[28]  # Replace 28 with the index-1 of the desired goal node
-    path = pathfindAStar(graph, start_node, goal_node)
-    print(path)
+    path1 = pathfindAStar(graph, start_node, goal_node)
+    path2 = pathfindAStar(graph, graph.nodes[0], graph.nodes[37])
+    path3 = pathfindAStar(graph, graph.nodes[10], graph.nodes[0])
+    path4 = pathfindAStar(graph, graph.nodes[32], graph.nodes[65])
+    path5 = pathfindAStar(graph, graph.nodes[57], graph.nodes[42])
+
+    with open('output.txt', 'w') as f:
+        f.write('Nodes:\n')
+        for node in graph.nodes:
+            f.write(node.toString())
+        f.write('Connections:\n')
+        for connection in graph.connections:
+            f.write(connection.toString())
+        f.write('Path 1: ')
+        f.write(str(path1))
+        f.write('\nPath 2: ')
+        f.write(str(path2))
+        f.write('\nPath 3: ')
+        f.write(str(path3))
+        f.write('\nPath 4: ')
+        f.write(str(path4))
+        f.write('\nPath 5: ')
+        f.write(str(path5))
 
 
 if __name__ == '__main__':

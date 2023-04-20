@@ -1,0 +1,226 @@
+Nodes:
+Node Number 1: Positioned at X = 20.0 and Z = 30.0
+Node Number 2: Positioned at X = 20.0 and Z = 15.0
+Node Number 3: Positioned at X = 50.0 and Z = 10.0
+Node Number 4: Positioned at X = 70.0 and Z = 10.0
+Node Number 5: Positioned at X = 115.0 and Z = 10.0
+Node Number 6: Positioned at X = 135.0 and Z = 10.0
+Node Number 7: Positioned at X = 165.0 and Z = 10.0
+Node Number 8: Positioned at X = 170.0 and Z = 15.0
+Node Number 9: Positioned at X = 180.0 and Z = 15.0
+Node Number 10: Positioned at X = 170.0 and Z = 65.0
+Node Number 11: Positioned at X = 160.0 and Z = 65.0
+Node Number 12: Positioned at X = 151.0 and Z = 68.0
+Node Number 13: Positioned at X = 142.0 and Z = 71.0
+Node Number 14: Positioned at X = 133.0 and Z = 74.0
+Node Number 15: Positioned at X = 124.0 and Z = 77.0
+Node Number 16: Positioned at X = 115.0 and Z = 80.0
+Node Number 17: Positioned at X = 92.5 and Z = 80.0
+Node Number 18: Positioned at X = 70.0 and Z = 80.0
+Node Number 19: Positioned at X = 45.0 and Z = 75.0
+Node Number 20: Positioned at X = 35.0 and Z = 70.0
+Node Number 21: Positioned at X = 20.0 and Z = 55.0
+Node Number 22: Positioned at X = 30.0 and Z = 50.0
+Node Number 23: Positioned at X = 45.0 and Z = 40.0
+Node Number 24: Positioned at X = 40.0 and Z = 60.0
+Node Number 25: Positioned at X = 50.0 and Z = 65.0
+Node Number 26: Positioned at X = 70.0 and Z = 70.0
+Node Number 27: Positioned at X = 70.0 and Z = 60.0
+Node Number 28: Positioned at X = 92.5 and Z = 70.0
+Node Number 29: Positioned at X = 115.0 and Z = 70.0
+Node Number 30: Positioned at X = 140.0 and Z = 62.0
+Node Number 31: Positioned at X = 128.5 and Z = 83.0
+Node Number 32: Positioned at X = 137.5 and Z = 80.0
+Node Number 33: Positioned at X = 146.5 and Z = 77.0
+Node Number 34: Positioned at X = 155.5 and Z = 74.0
+Node Number 35: Positioned at X = 175.0 and Z = 85.0
+Node Number 36: Positioned at X = 175.0 and Z = 65.0
+Node Number 37: Positioned at X = 145.0 and Z = 95.0
+Node Number 38: Positioned at X = 130.0 and Z = 100.0
+Node Number 39: Positioned at X = 152.0 and Z = 105.0
+Node Number 40: Positioned at X = 145.0 and Z = 120.0
+Node Number 41: Positioned at X = 160.0 and Z = 140.0
+Node Number 42: Positioned at X = 175.0 and Z = 160.0
+Node Number 43: Positioned at X = 75.0 and Z = 190.0
+Node Number 44: Positioned at X = 115.0 and Z = 100.0
+Node Number 45: Positioned at X = 92.5 and Z = 100.0
+Node Number 46: Positioned at X = 70.0 and Z = 100.0
+Node Number 47: Positioned at X = 70.0 and Z = 110.0
+Node Number 48: Positioned at X = 77.0 and Z = 110.0
+Node Number 49: Positioned at X = 85.0 and Z = 110.0
+Node Number 50: Positioned at X = 92.5 and Z = 110.0
+Node Number 51: Positioned at X = 100.0 and Z = 110.0
+Node Number 52: Positioned at X = 108.0 and Z = 110.0
+Node Number 53: Positioned at X = 115.0 and Z = 110.0
+Node Number 54: Positioned at X = 108.0 and Z = 120.0
+Node Number 55: Positioned at X = 100.0 and Z = 120.0
+Node Number 56: Positioned at X = 92.5 and Z = 120.0
+Node Number 57: Positioned at X = 85.0 and Z = 120.0
+Node Number 58: Positioned at X = 77.0 and Z = 120.0
+Node Number 59: Positioned at X = 60.0 and Z = 90.0
+Node Number 60: Positioned at X = 182.0 and Z = 95.0
+Node Number 61: Positioned at X = 43.0 and Z = 98.0
+Node Number 62: Positioned at X = 35.0 and Z = 95.0
+Node Number 63: Positioned at X = 30.0 and Z = 105.0
+Node Number 64: Positioned at X = 65.0 and Z = 120.0
+Node Number 65: Positioned at X = 40.0 and Z = 105.0
+Node Number 66: Positioned at X = 20.0 and Z = 145.0
+Connections:
+Connection Number 1: Goes from Node 1 to Node 2 with cost 5
+Connection Number 2: Goes from Node 2 to Node 1 with cost 30
+Connection Number 3: Goes from Node 2 to Node 3 with cost 40
+Connection Number 4: Goes from Node 3 to Node 2 with cost 60
+Connection Number 5: Goes from Node 3 to Node 4 with cost 20
+Connection Number 6: Goes from Node 4 to Node 3 with cost 20
+Connection Number 7: Goes from Node 4 to Node 5 with cost 45
+Connection Number 8: Goes from Node 5 to Node 4 with cost 45
+Connection Number 9: Goes from Node 5 to Node 6 with cost 20
+Connection Number 10: Goes from Node 6 to Node 5 with cost 20
+Connection Number 11: Goes from Node 6 to Node 7 with cost 30
+Connection Number 12: Goes from Node 7 to Node 6 with cost 30
+Connection Number 13: Goes from Node 7 to Node 8 with cost 8
+Connection Number 14: Goes from Node 8 to Node 7 with cost 8
+Connection Number 15: Goes from Node 8 to Node 9 with cost 10
+Connection Number 16: Goes from Node 9 to Node 8 with cost 10
+Connection Number 17: Goes from Node 8 to Node 10 with cost 50
+Connection Number 18: Goes from Node 10 to Node 8 with cost 50
+Connection Number 19: Goes from Node 10 to Node 11 with cost 10
+Connection Number 20: Goes from Node 11 to Node 35 with cost 25
+Connection Number 21: Goes from Node 35 to Node 36 with cost 20
+Connection Number 22: Goes from Node 36 to Node 10 with cost 5
+Connection Number 23: Goes from Node 11 to Node 12 with cost 10
+Connection Number 24: Goes from Node 12 to Node 11 with cost 10
+Connection Number 25: Goes from Node 12 to Node 13 with cost 10
+Connection Number 26: Goes from Node 13 to Node 12 with cost 10
+Connection Number 27: Goes from Node 13 to Node 14 with cost 10
+Connection Number 28: Goes from Node 14 to Node 13 with cost 10
+Connection Number 29: Goes from Node 14 to Node 15 with cost 10
+Connection Number 30: Goes from Node 15 to Node 14 with cost 10
+Connection Number 31: Goes from Node 15 to Node 16 with cost 10
+Connection Number 32: Goes from Node 16 to Node 15 with cost 10
+Connection Number 33: Goes from Node 16 to Node 17 with cost 22
+Connection Number 34: Goes from Node 17 to Node 16 with cost 22
+Connection Number 35: Goes from Node 17 to Node 18 with cost 22
+Connection Number 36: Goes from Node 17 to Node 18 with cost 22
+Connection Number 37: Goes from Node 18 to Node 19 with cost 26
+Connection Number 38: Goes from Node 19 to Node 18 with cost 26
+Connection Number 39: Goes from Node 19 to Node 20 with cost 12
+Connection Number 40: Goes from Node 20 to Node 19 with cost 12
+Connection Number 41: Goes from Node 20 to Node 21 with cost 25
+Connection Number 42: Goes from Node 21 to Node 20 with cost 25
+Connection Number 43: Goes from Node 21 to Node 22 with cost 12
+Connection Number 44: Goes from Node 22 to Node 23 with cost 19
+Connection Number 45: Goes from Node 23 to Node 3 with cost 31
+Connection Number 46: Goes from Node 16 to Node 44 with cost 20
+Connection Number 47: Goes from Node 44 to Node 16 with cost 20
+Connection Number 48: Goes from Node 38 to Node 44 with cost 15
+Connection Number 49: Goes from Node 44 to Node 38 with cost 15
+Connection Number 50: Goes from Node 16 to Node 38 with cost 25
+Connection Number 51: Goes from Node 38 to Node 16 with cost 25
+Connection Number 52: Goes from Node 37 to Node 38 with cost 16
+Connection Number 53: Goes from Node 38 to Node 37 with cost 16
+Connection Number 54: Goes from Node 35 to Node 37 with cost 32
+Connection Number 55: Goes from Node 37 to Node 35 with cost 32
+Connection Number 56: Goes from Node 38 to Node 40 with cost 25
+Connection Number 57: Goes from Node 40 to Node 38 with cost 25
+Connection Number 58: Goes from Node 40 to Node 41 with cost 25
+Connection Number 59: Goes from Node 41 to Node 40 with cost 25
+Connection Number 60: Goes from Node 41 to Node 42 with cost 25
+Connection Number 61: Goes from Node 42 to Node 41 with cost 25
+Connection Number 62: Goes from Node 40 to Node 43 with cost 99
+Connection Number 63: Goes from Node 43 to Node 40 with cost 99
+Connection Number 64: Goes from Node 18 to Node 46 with cost 20
+Connection Number 65: Goes from Node 46 to Node 18 with cost 20
+Connection Number 66: Goes from Node 46 to Node 47 with cost 10
+Connection Number 67: Goes from Node 47 to Node 46 with cost 10
+Connection Number 68: Goes from Node 47 to Node 48 with cost 7
+Connection Number 69: Goes from Node 48 to Node 47 with cost 7
+Connection Number 70: Goes from Node 48 to Node 49 with cost 8
+Connection Number 71: Goes from Node 49 to Node 48 with cost 8
+Connection Number 72: Goes from Node 49 to Node 50 with cost 8
+Connection Number 73: Goes from Node 50 to Node 49 with cost 8
+Connection Number 74: Goes from Node 50 to Node 51 with cost 8
+Connection Number 75: Goes from Node 51 to Node 50 with cost 8
+Connection Number 76: Goes from Node 51 to Node 52 with cost 8
+Connection Number 77: Goes from Node 52 to Node 51 with cost 8
+Connection Number 78: Goes from Node 52 to Node 53 with cost 7
+Connection Number 79: Goes from Node 53 to Node 52 with cost 7
+Connection Number 80: Goes from Node 44 to Node 53 with cost 10
+Connection Number 81: Goes from Node 53 to Node 44 with cost 10
+Connection Number 82: Goes from Node 19 to Node 62 with cost 23
+Connection Number 83: Goes from Node 62 to Node 19 with cost 23
+Connection Number 84: Goes from Node 47 to Node 61 with cost 30
+Connection Number 85: Goes from Node 61 to Node 47 with cost 30
+Connection Number 86: Goes from Node 47 to Node 64 with cost 12
+Connection Number 87: Goes from Node 64 to Node 47 with cost 12
+Connection Number 88: Goes from Node 61 to Node 62 with cost 10
+Connection Number 89: Goes from Node 62 to Node 61 with cost 10
+Connection Number 90: Goes from Node 61 to Node 65 with cost 16
+Connection Number 91: Goes from Node 65 to Node 61 with cost 16
+Connection Number 92: Goes from Node 62 to Node 63 with cost 12
+Connection Number 93: Goes from Node 63 to Node 62 with cost 12
+Connection Number 94: Goes from Node 63 to Node 64 with cost 39
+Connection Number 95: Goes from Node 64 to Node 63 with cost 39
+Connection Number 96: Goes from Node 64 to Node 66 with cost 70
+Connection Number 97: Goes from Node 66 to Node 64 with cost 70
+Connection Number 98: Goes from Node 20 to Node 24 with cost 23
+Connection Number 99: Goes from Node 24 to Node 20 with cost 23
+Connection Number 100: Goes from Node 19 to Node 25 with cost 23
+Connection Number 101: Goes from Node 25 to Node 19 with cost 23
+Connection Number 102: Goes from Node 18 to Node 26 with cost 20
+Connection Number 103: Goes from Node 26 to Node 18 with cost 20
+Connection Number 104: Goes from Node 26 to Node 27 with cost 20
+Connection Number 105: Goes from Node 27 to Node 26 with cost 20
+Connection Number 106: Goes from Node 26 to Node 28 with cost 45
+Connection Number 107: Goes from Node 28 to Node 26 with cost 45
+Connection Number 108: Goes from Node 28 to Node 29 with cost 45
+Connection Number 109: Goes from Node 29 to Node 28 with cost 45
+Connection Number 110: Goes from Node 29 to Node 30 with cost 53
+Connection Number 111: Goes from Node 30 to Node 29 with cost 53
+Connection Number 112: Goes from Node 17 to Node 28 with cost 20
+Connection Number 113: Goes from Node 28 to Node 17 with cost 20
+Connection Number 114: Goes from Node 16 to Node 29 with cost 20
+Connection Number 115: Goes from Node 29 to Node 16 with cost 20
+Connection Number 116: Goes from Node 13 to Node 30 with cost 19
+Connection Number 117: Goes from Node 30 to Node 13 with cost 19
+Connection Number 118: Goes from Node 12 to Node 34 with cost 15
+Connection Number 119: Goes from Node 34 to Node 12 with cost 15
+Connection Number 120: Goes from Node 13 to Node 33 with cost 15
+Connection Number 121: Goes from Node 33 to Node 13 with cost 15
+Connection Number 122: Goes from Node 14 to Node 32 with cost 15
+Connection Number 123: Goes from Node 32 to Node 14 with cost 15
+Connection Number 124: Goes from Node 15 to Node 31 with cost 15
+Connection Number 125: Goes from Node 31 to Node 15 with cost 15
+Connection Number 126: Goes from Node 17 to Node 45 with cost 40
+Connection Number 127: Goes from Node 45 to Node 17 with cost 40
+Connection Number 128: Goes from Node 45 to Node 50 with cost 20
+Connection Number 129: Goes from Node 50 to Node 45 with cost 20
+Connection Number 130: Goes from Node 44 to Node 45 with cost 45
+Connection Number 131: Goes from Node 45 to Node 44 with cost 45
+Connection Number 132: Goes from Node 45 to Node 46 with cost 45
+Connection Number 133: Goes from Node 46 to Node 45 with cost 45
+Connection Number 134: Goes from Node 52 to Node 54 with cost 20
+Connection Number 135: Goes from Node 54 to Node 52 with cost 20
+Connection Number 136: Goes from Node 51 to Node 55 with cost 20
+Connection Number 137: Goes from Node 55 to Node 51 with cost 20
+Connection Number 138: Goes from Node 50 to Node 56 with cost 20
+Connection Number 139: Goes from Node 56 to Node 50 with cost 20
+Connection Number 140: Goes from Node 49 to Node 57 with cost 20
+Connection Number 141: Goes from Node 57 to Node 49 with cost 20
+Connection Number 142: Goes from Node 48 to Node 58 with cost 20
+Connection Number 143: Goes from Node 58 to Node 48 with cost 20
+Connection Number 144: Goes from Node 18 to Node 59 with cost 29
+Connection Number 145: Goes from Node 59 to Node 18 with cost 29
+Connection Number 146: Goes from Node 19 to Node 59 with cost 43
+Connection Number 147: Goes from Node 59 to Node 19 with cost 43
+Connection Number 148: Goes from Node 46 to Node 59 with cost 29
+Connection Number 149: Goes from Node 59 to Node 46 with cost 29
+Connection Number 150: Goes from Node 35 to Node 60 with cost 25
+Connection Number 151: Goes from Node 60 to Node 35 with cost 25
+Connection Number 152: Goes from Node 37 to Node 39 with cost 25
+Connection Number 153: Goes from Node 39 to Node 37 with cost 25
+Path 1: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 29]
+Path 2: [1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12, 13, 14, 15, 16, 38]
+Path 3: [11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 3, 2, 1]
+Path 4: [33, 13, 14, 15, 16, 17, 18, 46, 47, 64, 66]
+Path 5: [58, 48, 49, 50, 51, 52, 53, 44, 38, 40, 43]
